@@ -1,0 +1,443 @@
+@import "nullstyle.css";
+html{scroll-behavior: smooth; font-family: 'Raleway', sans-serif; box-sizing: border-box; }
+//Переменные
+$black: #000;
+$white: #fff;
+$active-link: #c7b299;
+$for-button: #998675;
+$gray: #555;
+
+@mixin font-montserrat{
+	font-family: "Montserrat", sans-serif;   }
+@mixin button-mixin{background-color: $for-button; width: 170px; height: 50px; color: $white; border-radius: 4px; font-size: 14px; font-weight: 800; letter-spacing: 0; line-height: 23px;
+  border: none;   border-bottom: 3px solid #423c37; cursor: pointer; &:hover{background-color: #423c37; transition: .2s ease;} &:active{ background-color: $black;}};
+
+@mixin eight-active-card{            background-color: #362f2d;
+    h4{color: #c7b299;}
+    p{color: $white;}
+    a{color: #c7b299;}   
+    .eight-text-card{border: 1px solid #362f2d; transition: .8s ease;} }
+@mixin eight-section-active-calendar{
+    .calendar-top{background-color: #c7b299; transition: .8s ease;}
+    .calendar-bottom{background-color: #a48d72; transition: .8s ease;}
+}
+/* -------------------------------------------------------------------------- */
+/*                                   Header                                   */
+/* -------------------------------------------------------------------------- */
+.container{width: 1200px; margin: 0 auto;}
+
+.header-section{ position: relative;
+    img{ height: 100vh; width: 100%; object-fit: cover; position: relative; z-index: 2;}
+    &-top{display: flex; justify-content: space-between; position: absolute; z-index: 3; top: 30px; width: 1200px; left: 25%; }
+&-logo{ z-index: 2; margin-top: 30px; display: flex; 
+    h2{  color: red; top: 0; font-size: 34px; letter-spacing: -0.04em; font-weight: 400; color: $white; }
+}
+&-navbar{z-index: 2; display: flex; margin-top: 40px; 
+ul{list-style-type: none; display: flex; margin-right: 50px;}
+li{color: $white; @include font-montserrat; font-size: 14px; font-weight: 300; letter-spacing: 0; 
+    & + li {margin-left: 30px;}
+    .active-link{color: $active-link;}
+}
+a{text-decoration: none; color: $white; cursor: pointer; &:hover{color: $active-link; transition: .2s ease;} &:active{color: $black}}
+}
+&-tools{z-index: 2; margin-top: 10px;
+svg{&+svg{margin-left: 25px;}}}
+&-center{z-index: 2; position: absolute;     top: 50%;   left: 50%; transform:translate(-50%, -50%); text-align: center; color: $white; max-width: 600px;
+h2{font-size: 36px; font-weight: 500; letter-spacing: 0;}
+h1{font-size: 52px; font-weight: 800; letter-spacing: 0; margin-top: 10px;}
+p{font-size: 16px; font-weight: 300; letter-spacing: 0; line-height: 24px; margin-top: 15px;}
+button{margin-top: 50px; @include button-mixin;}
+}
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               SECOND-SECTION                               */
+/* -------------------------------------------------------------------------- */
+.second-section{
+    padding-top: 80px;
+    &-top{display: flex; justify-content: space-between; transition: 1s ease;  opacity: 1; 
+    div{&+div{margin-left: 30px;}}}
+        .top-move1{  transform: translate(0, -100%); opacity: 0; }
+        .top-move2{  transform: translate(0, 100%); opacity: 0; }
+    &-card{
+        //!
+        text-align: center;  transition: .5s ease;
+        img{display:block; margin: 0 auto 30px;}
+        h3{margin-bottom: 25px; color: $gray; font-size: 22px; font-weight: 600; letter-spacing: 0;}
+        .h3-2{color: #c7b299;}
+        p{margin-bottom: 30px; color: #8c8c8c; font-size: 14px; font-weight: 300; line-height: 24px; @include font-montserrat; letter-spacing: 0;}
+        span{display: block; background-color: #f1eee9; width: 70px; height: 3px; margin: 0 auto 80px;}
+        .span2-2{background-color: #c7b299; }
+    }
+    &-middle{
+        padding-top: 80px; background-color: #fbfaf8; position: relative; z-index: 2;
+        &-text{ text-align: center; max-width: 760px; margin: 0 auto; transform: rotateY(180deg); transition: 1s ease;
+            //!
+            &-active{transform: rotateY(0);}
+            &-active2{transform: translate(0,100%)}
+            h3{color: $gray; font-size: 30px; font-weight: 600; letter-spacing: 0;}
+            p{color: #8c8c8c; @include font-montserrat; font-size: 16px; font-weight: 300; letter-spacing: 0; line-height: 28px; padding-bottom: 40px;}
+        }
+    }
+    &-bottom{background-color: #fbfaf8; 
+    &-inner{ position: relative; height: 485px; 
+        img{ position: absolute;  bottom: 0;}
+        .img2-2{right: 18%; z-index: 3; }
+        .img2-3{right: 0; }
+    }}
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                THIRD-SECTION                               */
+/* -------------------------------------------------------------------------- */
+
+.third-section{ position: relative; z-index: 2;
+        background-image: -moz-linear-gradient( 0deg, rgb(33,27,25) 0%, rgb(78,52,39) 100%);
+        background-image: -webkit-linear-gradient( 0deg, rgb(33,27,25) 0%, rgb(78,52,39) 100%);
+        background-image: -ms-linear-gradient( 0deg, rgb(33,27,25) 0%, rgb(78,52,39) 100%);    
+        &-inner{display: flex; justify-content: space-between; padding: 50px 0 50px;}
+        &-left{h3{font-size: 28px; font-weight: 400; letter-spacing: 0; color: $white; span{color: #bca891;}}
+               p{color: #615855; @include font-montserrat; font-size: 18px; font-weight: 300; letter-spacing: 0; }}
+        &-right{button{@include button-mixin}}
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               FOURTH-SECTION                               */
+/* -------------------------------------------------------------------------- */
+
+.fourth-section{
+    padding-top: 80px;
+    &-top{ max-width: 760px; text-align: center;  margin: 0 auto; transition: 1s ease; transform: translate(0, -120%); position: relative; z-index: 1;
+        &-active{transform: translate(0, 0);}
+        &-active2{transform: translate(0, -120%);}
+        h3{color: $gray; font-size: 30px; font-weight: 600; letter-spacing: 0; }
+        p{color: #8c8c8c; font-size: 16px; font-weight: 300; line-height: 28px; letter-spacing: 0; margin: 30px 0 45px;}
+        ul{list-style-type: none; display: flex; max-width: 610px; margin: 0 auto; text-align: center;
+        li{border-radius: 4px; @include font-montserrat; font-size: 14px; font-weight: 300; line-height: 21px; letter-spacing: 0; width: 120px; height: 30px; color: #8c8c8c; border: 1px solid #ebebeb; background-color: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; &+li{margin-left: 10px; margin-bottom: 40px;}}
+        .li4-active{width: 70px; height: 30px; background-color: $for-button; color: $white; }
+        li:hover{background-color: $for-button; color: $white; transition: .2s ease;} li:active{background-color: $black;}
+        .li4{transform: rotate(0); transition: 1s ease;} 
+        .li4-vertical{transform: rotate(360deg);} 
+    }
+    }
+    &-bottom-cards{ display: flex; flex-wrap: wrap; position: relative; z-index: 3;
+        .fourth-section-card{width: 31%; margin-top: 30px; background-color: #fbfaf8; margin-left: 25px; position: relative; cursor: pointer; 
+            &::after{  // тут трикутник роблю..
+                content: ''; 
+                position: absolute; 
+                left: 20px; bottom: 125px; 
+                border: 15px solid transparent; border-bottom: 10px solid #fbfaf8;
+            }
+        h4{font-size: 20px; font-weight: 500; letter-spacing: 0; color: #d1c0ac; margin-bottom: 15px; margin-left: 30px; margin-top: 30px;} img.img-4-card{width: 100%; }
+        p{font-size: 14px; font-weight: 300; letter-spacing: 0; line-height: 20px; color: #d1d1d1; margin-bottom: 30px; @include font-montserrat; margin-left: 30px;} 
+            &:hover{transform: scale(1.03); transition: .9s ease; background-color: #362f2d; &::after{border-bottom: 10px solid #362f2d; transition: .9s;}}
+    }
+    .active-card4{ background-color: #362f2d;
+        &::after{border-bottom: 10px solid #362f2d; }
+        h4{color: $white;}
+        p{color: #c7b299; }
+        img.link{position: absolute; top: 30%; left: 42.5%;}
+        img.lupa{position: absolute; top: 30%; left: 57.5%;}
+    }
+
+}
+&-bottom-button{         margin: 40px auto 80px;  display: flex; justify-content: center;
+    button{@include button-mixin;}
+}
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                FIFTH-SECTION                               */
+/* -------------------------------------------------------------------------- */
+
+.fifth-section{
+    &-inner{  position: relative;
+        &-img { width: 100%; height: 705px; }
+    }
+    &-circle{ position: absolute; top: 30%; left: 50%; transform:translate(-50%, -30%); cursor: pointer;
+        
+    }
+
+    
+    &-text{position: absolute; top: 60%; left:50%;     transform:translate(-50%, -60%); text-align: center; width: 560px; line-height: 0;
+        h3{font-size: 30px; font-weight: 500; letter-spacing: 0; color: $white;}
+        p{font-size: 16px; font-weight: 300; letter-spacing: 0; line-height: 28px; color: $white; @include font-montserrat; margin-top: 30px; margin-bottom: 35px;}
+        time{font-size: 14px;  font-weight: 400; letter-spacing: 0; color: #c7b299; @include font-montserrat}
+    }
+
+
+
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                SIXTH-SECTION                               */
+/* -------------------------------------------------------------------------- */
+
+
+.sixth-section{ overflow: hidden;
+    padding-top: 75px;
+    &-inner{
+        display: flex; justify-content: space-between;
+    }
+    &-left{ width: 100%;
+        img{height: 615px; }
+    }
+    &-right{ 
+        margin-top: 115px; max-width: 660px; 
+        //!
+        &-text{transform: translate(0);  transition: 1s ease .6s; opacity: 1;
+            &-move{transform: translate(0,400%); opacity: 0;}
+        }
+        h3{color: $gray; font-size: 30px; font-weight: 600; letter-spacing: 0; line-height: 0; margin-bottom: 40px;}
+        p{color: #8c8c8c; @include font-montserrat; font-size: 16px; font-weight: 300; line-height: 28px; letter-spacing: 0; margin-bottom: 30px;}
+        ul{ list-style-type: none; 
+
+        li{ 
+          margin-left: 50px;  position: relative; color: #8c8c8c; @include font-montserrat; font-size: 16px; font-weight: 300; letter-spacing: 0; line-height: 32px;
+          img{  position: absolute; left: -40px; top: 6px;}
+        // &::before{
+        //    position: absolute; content: '>'; 
+        //    width: 21px; height: 21px; border-radius: 50%; background-color: #c7b299; left: -55px; top: 6px; display: flex; justify-content: center; align-items: center; text-align: center; font-weight: bold; color: $white;
+        // }
+}
+    .li6{transform: translate(250%,0); transition: 1s ease;
+        &-horizontal{transform: translate(0,0);}
+        &:nth-child(1){transition-delay: .1s;}
+        &:nth-child(2){transition-delay: .2s;}
+        &:nth-child(3){transition-delay: .3s;}
+        &:nth-child(4){transition-delay: .4s;}
+    }
+}
+    }
+}
+
+  /* -------------------------------------------------------------------------- */
+  /*                                SEVEN-SECTION                               */
+  /* -------------------------------------------------------------------------- */
+
+  .seven-section{position: relative; overflow: hidden;
+        background-image: -moz-linear-gradient( 0deg, rgb(33,27,25) 0%, rgb(78,52,39) 100%);
+        background-image: -webkit-linear-gradient( 0deg, rgb(33,27,25) 0%, rgb(78,52,39) 100%);
+        background-image: -ms-linear-gradient( 0deg, rgb(33,27,25) 0%, rgb(78,52,39) 100%);
+        height: 300px; display: flex; align-items: center;
+        &-inner{
+            display: flex; justify-content: space-around; 
+        }
+        &-block{padding-top: 70px; line-height: 0; padding-bottom: 60px; transition: 1s ease;
+            &-end{transform: translate(0,100%); transition: 1s ease;}
+            img{ margin: 0 auto;}
+        p.seven-number{margin: 25px auto 25px; text-align: center; color: $white; font-size: 48px; font-weight: 200; @include font-montserrat; letter-spacing: 0; line-height: 36px;}
+        p.seven-text{margin: 25px auto 25px;  text-align: center; color: #c7b299; font-size: 14px; font-weight: 300; letter-spacing: 0; @include font-montserrat; line-height: 20px; text-transform: uppercase;}
+        span{width: 30px; height: 3px; background-color: $white; display: block; margin: 25px auto 0;}
+        }
+    }
+      .block7-1{
+          animation: block7-1 2s ease alternate ;
+          span{animation: span7-1 2s ease 4.3s forwards;}
+      }
+      .block7-2{
+          animation: block7-2 2s ease alternate ;
+          span{animation: span7-2 2s ease 4s forwards;}
+      }
+      .block7-3{
+          animation: block7-3 2s  ease alternate ;
+          span{animation: span7-3 2s ease 2s;}
+      }
+      .block7-4{
+        animation: block7-4 2s ease alternate ;
+        span{animation: span7-4 2s ease 4s forwards;}
+    }
+    .block7-5{
+        animation: block7-5 2s ease alternate ;
+        span{animation: span7-5 2s ease 4.3s forwards;}
+    }
+    @keyframes block7-1{
+        0%{transform: translate(0,100%);}
+        100%{transform: translate(0,0);}}
+    @keyframes block7-2{
+        0%{transform: translate(0,-100%);}
+        100%{transform: translate(0,0);}}
+    @keyframes block7-3{
+        0%{transform: rotate(0);}
+        100%{transform: rotate(720deg)}}
+    @keyframes span7-3{
+        0%{transform: rotate(0);}
+        100%{transform: rotate(720deg)}}
+    @keyframes block7-4{
+            0%{transform: translate(0,-100%);}
+            100%{transform: translate(0,0);}}
+    @keyframes block7-5{
+            0%{transform: translate(0,100%);}
+            100%{transform: translate(0,0);}}
+    @keyframes span7-2{
+            0%{transform: translate(0,0);opacity: 1;}
+            100%{transform: translate(2000px,0);opacity: 0;}}
+    @keyframes span7-4{
+            0%{transform: translate(0,0);opacity: 1;}
+            100%{transform: translate(-2000px,0);opacity: 0;}}
+    @keyframes span7-1{
+            0%{transform: translate(0,0);opacity: 1;}
+            100%{transform: translate(2000px,0);opacity: 0;}}
+    @keyframes span7-5{
+            0%{transform: translate(0,0);opacity: 1;}
+            100%{transform: translate(-2000px,0);opacity: 0;}}
+
+    /* -------------------------------------------------------------------------- */
+    /*                                EIGHT-SECTION                               */
+    /* -------------------------------------------------------------------------- */
+
+    .eight-section{   
+        padding-top: 85px;
+        &-top{text-align: center; max-width: 760px; margin: 0 auto;
+        h4{font-size: 30px; font-weight: 600; letter-spacing: 0; color: $gray; margin-bottom: 30px;}
+        p{font-size: 16px; font-weight: 300; letter-spacing: 0; color: #8c8c8c; @include font-montserrat; line-height: 28px; margin-bottom: 40px;}
+        }
+        &-bottom{display: flex; justify-content: space-between;              padding-bottom: 80px;
+            &-card{transition: 1s ease;  position: relative; &+.eight-section-bottom-card{margin-left: 30px; 
+                } img{width: 100%;}
+             cursor: pointer; 
+        &:hover{@include eight-active-card; transition: .8s ease; transform: scale(1.05); @include eight-section-active-calendar; }
+        &-end{transform: translate(0,150%);transition: 1s ease;}
+        .calendar{position: absolute; top: 20px; left: 20px; z-index: 4; transition: .8s ease;
+
+        &-active{
+            .calendar-top{background-color: #c7b299;}
+            .calendar-bottom{background-color: #a48d72;}
+        }
+        &-top{@include font-montserrat; font-size: 24px; font-weight: 300; letter-spacing: 0; width: 50px; height: 35px; background-color: #363636; border-top-left-radius: 2px; border-top-right-radius: 2px; display: flex; justify-content: center; align-items: center; color: $white;}
+        &-bottom{font-family: 'Roboto', sans-serif; font-size: 12px; font-weight: 400; letter-spacing: 0; width: 50px; height: 25px; background-color: #252525; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; display: flex; justify-content: center; align-items: center; color: $white;}
+    }
+    }
+
+        .eight-text-card{ padding: 30px 45px 30px 30px;  border: 1px solid #f8f8f8;
+            h4{font-size: 20px; font-weight: 500; letter-spacing: 0; color: $gray;}
+            p{color: #8c8c8c; font-size: 14px; list-style: 22px; font-weight: 300; letter-spacing: 300; @include font-montserrat; margin-top: 15px; margin-bottom: 20px;}
+            a{position: relative; text-decoration: none; color: #c7b299; font-size: 14px; font-weight: 300; line-height: 20px; letter-spacing: 0; @include font-montserrat;
+            &::after{	border: 4px solid transparent; border-left: 5px solid #c7b299; position: absolute; right: -20px; top: 5.5px;    content: ''; } 
+            }
+
+
+        }
+        .eight-active{ 
+            background-color: #362f2d;
+            h4{color: #c7b299;}
+            p{color: $white;}
+            a{color: #c7b299;}   
+            .eight-text-card{border: 1px solid #362f2d}
+    }
+         }
+            }
+            .card8-1{animation: card8-1 1s ease ; }
+            .card8-3{animation: card8-3 1s ease;}
+            @keyframes card8-1{
+                0%{transform: translate(-1600px, 0)}
+                100%{transform: ranslate(0px, 0)}
+            }
+            @keyframes card8-3{
+                0%{transform: translate(1600px, 0)}
+                100%{transform: ranslate(0, 0)}
+            }
+
+            /* -------------------------------------------------------------------------- */
+            /*                               NINGHT-SECTION                               */
+            /* -------------------------------------------------------------------------- */
+
+            .section-ninght{                   
+                &-inner{position: relative;
+                    .ninght-bg {width: 100%; position: relative;}
+                }
+                
+                &-labels{
+                     display: flex; justify-content: space-around; align-items: center; position: absolute;     top: 50%;
+                     left: 50%;
+                     transform:translate(-50%, -50%);
+                     div{transition: 1s; &:hover{transform: scale(1.4); transition: 1s;}}
+                     .label-ninght{transition: 1.5s; &:hover{transform: rotate(720deg); transition: 1.5s; cursor: pointer;  }}
+                }
+            }
+
+            /* -------------------------------------------------------------------------- */
+            /*                                TENTH-SECTION                               */
+            /* -------------------------------------------------------------------------- */
+
+            .tenth-section{
+                background-color: #191919; padding-top: 80px; padding-bottom: 80px; overflow: hidden;
+                &-inner{                    display: flex; justify-content: space-between; }
+                &-column{
+                            width: 23%;
+                    svg{margin-bottom: 30px;}
+                    h2{font-size: 34px; font-weight: 700; letter-spacing: -0.04em; color: $white; }
+                    h3{margin-bottom: 15px; font-size: 24px; font-weight: 700; letter-spacing: 0; color: $white; margin-top: 35px; }
+                    p{font-size: 14px; font-weight: 300; letter-spacing: 0; line-height: 24px; @include font-montserrat; color: $gray;}
+                    p.tenth-data{font-size: 12px; color: #363636; line-height: 20px; padding-bottom: 10px;
+                    &-white{color: $white;} &-second{padding-top: 15px;} &-border{padding-bottom: 20px; border-bottom: 1px solid #252525;}}
+                    span.tenth-blue{color: #059ec9;}
+                    span.tenth-white{color: #959595;}
+                    a{color: #d1d1d1; font-size: 14px; font-weight: 400; @include font-montserrat; letter-spacing: 0; text-decoration: none; position: relative;  line-height: 0;
+                        &::after{	border: 4px solid transparent; border-left: 5px solid #d1d1d1; position: absolute; right: -20px; top: 5.5px;    content: ''; } }
+                    p.tenth-first-p{margin-bottom: 15px;}
+                    p.tenth-p-border{padding-bottom: 20px; border-bottom: 1px solid #252525;}
+                    p.tenth-third-p{padding-top: 15px;}
+                }
+                &-top{
+                    display: flex;  align-items: center;
+                }
+                &-card-img{display: flex; flex-wrap: wrap; gap: 10px;
+                }
+            }
+                    .tenth-img3{animation: tenth-img3 1s ease 2s forwards;}
+                    @keyframes tenth-img3{
+                        0%{transform: translate(0,0); opacity: 1;}
+                        100%{transform: translate(0,1000px); opacity: 0;}
+                    }
+                    .tenth-img1{animation: tenth-img3 1s ease 2.5s forwards;}
+                    @keyframes tenth-img1{
+                        0%{transform: translate(0,0); opacity: 1;}
+                        100%{transform: translate(0,1000px); opacity: 0;}
+                    }
+                    .tenth-img2{animation: tenth-img2 1.5s ease 3s forwards;}
+                    @keyframes tenth-img2{
+                        0%{transform: translate(0,0); opacity: 1;}
+                        33%{transform: translate(-110%,0); opacity: 1; }
+                        100%{transform: translate(-110%,1000px); opacity: 0;}
+                    }
+                    .tenth-img4{animation: tenth-img4 2s ease 4s forwards;}
+                    @keyframes tenth-img4{
+                        0%{transform: translate(0,0); opacity: 1;}
+                        25%{transform: translate(0,-110%); opacity: 1; }
+                        50%{transform: translate(-110%,-110%); opacity: 1;}
+                        100%{transform: translate(-110%,1000px); opacity: 0;}
+                    }
+                    .tenth4-h3{animation: tenth4-h3 1s ease 6s forwards;}
+                    @keyframes tenth4-h3{
+                        0%{transform: translate(0,0); opacity: 1;}
+                        100%{transform: translate(0,1000px); opacity: 0;}
+                    }
+                    .column-10{animation: column-10x 1s ease 7s forwards;}
+                    @keyframes column-10x{
+                        0%{transform: translate(0,0);}
+                        100%{transform: translate(70%,0);}
+                    }
+            /* -------------------------------------------------------------------------- */
+            /*                               FOOTER-SECTION                               */
+            /* -------------------------------------------------------------------------- */
+
+            .footer-section{
+                height: 110px; background-color: #111111; overflow: hidden; display: flex;
+                &-inner{display: flex; justify-content: space-between; align-items: center; }
+                &-left{
+                ul{list-style-type: none; display: flex;}
+                    li{margin-left: 30px; position: relative;  &::after{content: ''; width: 2px; height: 13px; left: -18px; top: 5px; position: absolute;  background-color: #1a1a1a; }}
+                    li:first-child {&::after{content: none;}}
+                    a{text-decoration: none; color: #4e4e4e; font-size: 13px; font-weight: 300; @include font-montserrat; letter-spacing: 0; &:hover{color: #c7b299; transition: .8s ease; span{color: #c7b299; transition: .8s ease;} &:active{color: $black; transition: .2s; span{color: $black;}}}
+                    span{color: #828282; }}
+                    a.footer-active{color: #c7b299;}
+                }
+                &-right{
+                    display: flex;
+                    p{@include font-montserrat; font-size: 13px; font-weight: 300; letter-spacing: 0; color: $gray; span{color: #959595;}
+                        &+p{margin-left: 25px; position: relative; &::after{position: absolute; width: 2px; height: 13px; left: -12px; top: 5px; background-color: #1a1a1a;  content: '';}}}
+                }
+            }
